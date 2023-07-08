@@ -16,7 +16,7 @@ imageviewer="tiv" #-h 40 -w 40  "
 scraper="/bin/wget"
 scrap_flag='--user-agent="$useragent"  -qO -   '  #scrap_flag=' -s  -H "User-Agent: $useragent" -A "$useragent" '
 #useragent="`random.exe`"                         
-useragent="Mozilla/5.0 (X11; Linux x86_64; rv:52.9) Gecko/20100101 Firefox/52.9 (Pale Moon)"
+useragent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0"
 sandbox_flag="$sandbox $f " 
 scraper_flag="$scraper $scrap_flag"
 searchlink="https://youtube.com/results?search_query="
@@ -194,7 +194,7 @@ echo ""
 
 #$HOME/my\ scripts/mpdl.sh "$watchlink$q"
 
-$sandbox  youtube-dl  -q --user-agent "$useragent"  -c  "$watchlink$q" -o - |   $player   -
+$sandbox  yt-dlp  -q --user-agent "$useragent"  -c  "$watchlink$q" -o - |   $player   -
 history "$show_title: $watchlink$q "
 mpv=1 # for conflict
 #clear
